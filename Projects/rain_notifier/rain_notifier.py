@@ -86,7 +86,7 @@ rainled = 7
 # we welcome additions and suggestions
 ############################################################################
 
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import json
 from grovepi import *
 import time
@@ -169,7 +169,7 @@ if len(sys.argv) > 1 and sys.argv[1] == 'test':
 
 try:
     while True:
-        f = urllib2.urlopen(url)
+        f = urllib.request.urlopen(url)
         json_string = f.read()
         f.close()
         parsed_json = json.loads(json_string)
@@ -178,7 +178,7 @@ try:
             precip_today = parsed_json['current_observation']['precip_today_in']
         else:
             precip_today = parsed_json['current_observation']['precip_today_metric']
-        print("Current precipitation in %s is: %s" % (location, precip_today))
+        print(("Current precipitation in %s is: %s" % (location, precip_today)))
 
         if float(precip_today) > float(RAIN_THRESHOLD):
             print("Rain today, take the umbrella")

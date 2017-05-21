@@ -56,7 +56,7 @@ def Main():
         probe_temperature = sensor.getTemperature()
 
         # print it in a fashionable way
-        print('[room temperature: {:5.2f}°C][probe temperature: {:5.2f}°C]'.format(room_temperature, probe_temperature))
+        print(('[room temperature: {:5.2f}°C][probe temperature: {:5.2f}°C]'.format(room_temperature, probe_temperature)))
         # and wait for 250 ms before taking another measurement - so we don't overflow the terminal
         sleep(0.25)
 
@@ -79,5 +79,5 @@ if __name__ == "__main__":
     # or if the values exceed a certain threshold
     # experiment and you'll see
     except ValueError as e:
-        print('[{}]'.format(str(e)))
+        print(('[{}]'.format(str(e))))
         sys.exit(0)

@@ -116,13 +116,13 @@ while True:
         #CO2 sensor calib
         print("wait 3 minutes to warm up CO2 sensor")
         time.sleep(180)
-        print("Read before calibration-->",c.read())
+        print(("Read before calibration-->",c.read()))
 
         print("calibrating...")
         co2 = c.calibrateZero()
         time.sleep(5)
 
-        print("Read after calibration-->",c.read())
+        print(("Read after calibration-->",c.read()))
 
         print("DONE")
         break

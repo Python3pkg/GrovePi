@@ -62,8 +62,8 @@ addressingMode= None
 SeeedOLED_Max_X                 =127 #128 Pixels
 SeeedOLED_Max_Y                 =63  #64  Pixels
                                 
-PAGE_MODE                       =01
-HORIZONTAL_MODE                 =02
+PAGE_MODE                       =0o1
+HORIZONTAL_MODE                 =0o2
                                                             
 SeeedOLED_Address               =0x3c
 SeeedOLED_Command_Mode          =0x80

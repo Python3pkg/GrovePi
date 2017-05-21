@@ -152,4 +152,4 @@ if __name__ == "__main__":
 	temp=h.ReadTemperature()
 	pressure=h.ReadPressure()
 	altitude=h.ReadAltitude()
-	print(temp,pressure,altitude)	
+	print((temp,pressure,altitude))	

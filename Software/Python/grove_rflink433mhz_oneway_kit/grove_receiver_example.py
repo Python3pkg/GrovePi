@@ -59,7 +59,7 @@ def Main():
         message_received = receiver.readMessage()
         if len(message_received) > 0:
             # if the string has something then print it
-            print('[message received][{}]'.format(message_received))
+            print(('[message received][{}]'.format(message_received)))
         else:
             print("[message_received][none or couldn't parse it]")
 

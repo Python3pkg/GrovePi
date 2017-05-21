@@ -46,6 +46,6 @@ while True:
         sensor_value0 = grovepi.analogRead(sensor0)
         sensor_value1 = grovepi.analogRead(sensor1)
         sensor_value2 = grovepi.analogRead(sensor2)
-        print ("%d,%d,%d" %(sensor_value0,sensor_value1,sensor_value2))
+        print(("%d,%d,%d" %(sensor_value0,sensor_value1,sensor_value2)))
     except IOError:
         print ("Error")

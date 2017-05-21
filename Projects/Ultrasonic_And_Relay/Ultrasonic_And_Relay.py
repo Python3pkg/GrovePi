@@ -46,7 +46,7 @@ while True:
     try:
         # Read distance value from Ultrasonic
         distant = ultrasonicRead(ultrasonic_ranger)
-        print(distant,'cm')
+        print((distant,'cm'))
         if distant <= 10:
             digitalWrite(Relay_pin,1)
         else:

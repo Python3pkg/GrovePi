@@ -60,7 +60,7 @@ def Main():
     while True:
         transmitter.writeMessage(message_to_broadcast)
 
-        print('[message sent][{}]'.format(message_to_broadcast))
+        print(('[message sent][{}]'.format(message_to_broadcast)))
         # the delay is not necessary for the transmission of data
         # but for not overflowing the terminal
         sleep(0.02)

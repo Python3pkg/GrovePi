@@ -44,7 +44,7 @@ while True:
 		switch_status= digitalRead(switch_pin)	#Read the switch status
 		if switch_status:	#If the switch is in HIGH position, run the program
 			accl = acc_xyz()	# Get the value from the accelerometer
-			print "\nX:",accl[0],"\tY:",accl[1],"\tZ:",accl[2],
+			print("\nX:",accl[0],"\tY:",accl[1],"\tZ:",accl[2], end=' ')
 
 			if accl[0] > 16:	# If the value on X-axis is greater than the Threshold, start the buzzer
 				digitalWrite(buzzer_pin,1)

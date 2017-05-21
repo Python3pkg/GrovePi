@@ -84,5 +84,5 @@ def send_email(content, destination, subject):
 
     except Exception as exc:
         # sys.exit( "mail failed; %s" % str(exc) ) # give a error message
-        print("Mail failed; %s" % str(exc))
+        print(("Mail failed; %s" % str(exc)))
         print("Moving on!")

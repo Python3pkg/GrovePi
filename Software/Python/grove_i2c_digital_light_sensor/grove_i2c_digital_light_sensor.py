@@ -104,10 +104,10 @@ def readRegister(address):
 	try:
 		byteval = i2c.readU8(address)
 		if (debug):
-			print("TSL2561.readRegister: returned 0x%02X from reg 0x%02X" % (byteval, address))
+			print(("TSL2561.readRegister: returned 0x%02X from reg 0x%02X" % (byteval, address)))
 		return byteval
 	except IOError:
-		print("TSL2561.readRegister: error reading byte from reg 0x%02X" % address)
+		print(("TSL2561.readRegister: error reading byte from reg 0x%02X" % address))
 		return -1
 
 
@@ -115,9 +115,9 @@ def writeRegister(address, val):
 	try:
 		i2c.write8(address, val)
 		if (debug):
-			print("TSL2561.writeRegister: wrote 0x%02X to reg 0x%02X" % (val, address))
+			print(("TSL2561.writeRegister: wrote 0x%02X to reg 0x%02X" % (val, address)))
 	except IOError:
-		print("TSL2561.writeRegister: error writing byte to reg 0x%02X" % address)
+		print(("TSL2561.writeRegister: error writing byte to reg 0x%02X" % address))
 		return -1
 
 def powerUp():
@@ -155,7 +155,7 @@ def readLux():
 	channel1 = (ch1_high<<8) | ch1_low
 
 	if debug:
-		print("TSL2561.readVisibleLux: channel 0 = %i, channel 1 = %i [gain=%ix, timing=%ims]" % (channel0, channel1, gain_m, timing_ms))
+		print(("TSL2561.readVisibleLux: channel 0 = %i, channel 1 = %i [gain=%ix, timing=%ims]" % (channel0, channel1, gain_m, timing_ms)))
 
 def readVisibleLux():
 	global timing, gain
@@ -275,7 +275,7 @@ def calculateLux(ch0, ch1):
 	# strip off fractional portion
 	lux = temp>>LUX_SCALE
 	if debug:
-		print("TSL2561.calculateLux: %i" % lux)
+		print(("TSL2561.calculateLux: %i" % lux))
 
 	return lux
 
@@ -288,7 +288,7 @@ def init():
 def main():
 	init()
 	while (True):
-		print("Lux: %i [Vis+IR=%i, IR=%i @ Gain=%ix, Timing=%.1fms]" % (readVisibleLux(), channel0, channel1, gain_m, timing_ms))
+		print(("Lux: %i [Vis+IR=%i, IR=%i @ Gain=%ix, Timing=%.1fms]" % (readVisibleLux(), channel0, channel1, gain_m, timing_ms)))
 		time.sleep(1)
 
 if __name__ == "__main__":

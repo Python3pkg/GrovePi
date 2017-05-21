@@ -64,7 +64,7 @@ try:
 
 	#Increase speed
 	for i in range (100):
-		print("Speed:",i)
+		print(("Speed:",i))
 		m.MotorSpeedSetAB(i,i)
 		time.sleep(.02)
 		

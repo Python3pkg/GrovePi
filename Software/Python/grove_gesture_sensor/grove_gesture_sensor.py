@@ -367,7 +367,7 @@ class gesture:
 		data0 = self.paj7620ReadReg(0, 1)[0]
 		data1 = self.paj7620ReadReg(1, 1)[0]
 		if self.debug:
-			print("data0:",data0,"data1:",data1)
+			print(("data0:",data0,"data1:",data1))
 		if data0 != 0x20  :#or data1 <> 0x76:
 			print("Error with sensor")
 			#return 0xff

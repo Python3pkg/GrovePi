@@ -54,10 +54,10 @@ while True:
         pin_bit = 1 << i
         # First check if transitioned from not touched to touched.
         if current_touched & pin_bit and not last_touched & pin_bit:
-            print('{0} touched!'.format(i))
+            print(('{0} touched!'.format(i)))
         # Next check if transitioned from touched to not touched.
         if not current_touched & pin_bit and last_touched & pin_bit:
-            print('{0} released!'.format(i))
+            print(('{0} released!'.format(i)))
     # Update last state and wait a short period before repeating.
     last_touched = current_touched
     time.sleep(0.1)

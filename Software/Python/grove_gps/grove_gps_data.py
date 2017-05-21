@@ -103,7 +103,7 @@ class GPS:
 	#Split the data into individual elements
 	def vals(self):
 		if enable_debug:
-			print(GPS.GGA)
+			print((GPS.GGA))
 			
 		time=GPS.GGA[1]
 		
@@ -136,7 +136,7 @@ class GPS:
 			# change to str instead of float
 			# 27"1 seems to be a valid value
 			alt=str(GPS.GGA[9])
-		return [time,fix,sats,alt,lat,lat_ns,long,long_ew]
+		return [time,fix,sats,alt,lat,lat_ns,int,long_ew]
 	
 	# Convert to decimal degrees
 	def decimal_degrees(self, raw_degrees):
@@ -173,9 +173,9 @@ if __name__ == "__main__":
 					
 			# print ("Time:",t,"Fix status:",fix,"Sats in view:",sats,"Altitude",alt,"Lat:",lat,lat_ns,"Long:",long,long_ew)
 			try:
-				print("Time\t\t: %s\nFix status\t: %d\nSats in view\t: %d\nAltitude\t: %s\nLat\t\t: %f\nLong\t\t: %f") %(t,fix,sats,alt,lat,longitude)
+				print(("Time\t\t: %s\nFix status\t: %d\nSats in view\t: %d\nAltitude\t: %s\nLat\t\t: %f\nLong\t\t: %f") %(t,fix,sats,alt,lat,longitude))
 			except:
-				print("Time\t\t: %s\nFix status\t: %s\nSats in view\t: %s\nAltitude\t: %s\nLat\t\t: %s\nLong\t\t: %s") %(t,str(fix),str(sats),str(alt),str(lat),str(longitude))
+				print(("Time\t\t: %s\nFix status\t: %s\nSats in view\t: %s\nAltitude\t: %s\nLat\t\t: %s\nLong\t\t: %s") %(t,str(fix),str(sats),str(alt),str(lat),str(longitude)))
 				
 			s=str(t)+","+str(safefloat(lat)/100)+","+str(safefloat(longitude)/100)+"\n"	
 				

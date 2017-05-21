@@ -50,6 +50,6 @@ while True:
 		d2=grovepi.digitalRead(button2)
 		d3=grovepi.digitalRead(button3)
 		d4=grovepi.digitalRead(button4)
-		print ("%d,%d,%d" %(d2,d3,d4))
+		print(("%d,%d,%d" %(d2,d3,d4)))
 	except IOError:
 		print ("Error")

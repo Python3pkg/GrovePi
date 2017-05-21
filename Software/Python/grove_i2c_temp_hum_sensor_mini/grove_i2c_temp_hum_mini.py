@@ -71,7 +71,7 @@ class th02:
 		while 1:
 			status=self.getStatus()
 			if debug:
-				print("st:",status)
+				print(("st:",status))
 			if status:
 				break
 		t_raw=bus.read_i2c_block_data(self.ADDRESS, self.TH02_REG_DATA_H,3)
@@ -86,7 +86,7 @@ class th02:
 		while 1:
 			status=self.getStatus()
 			if debug:
-				print("st:",status)
+				print(("st:",status))
 			if status:
 				break
 		t_raw=bus.read_i2c_block_data(self.ADDRESS, self.TH02_REG_DATA_H,3)
@@ -107,5 +107,5 @@ class th02:
 if __name__ == "__main__":		
 	t= th02()
 	while True:
-		print(t.getTemperature(),t.getHumidity())
+		print((t.getTemperature(),t.getHumidity()))
 		time.sleep(.5)

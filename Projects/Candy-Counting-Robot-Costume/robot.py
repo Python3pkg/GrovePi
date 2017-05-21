@@ -395,7 +395,7 @@ def led_random():
 			grovepi.chainableRgbLed_test(ledpin, numleds, random.randint(0,7))
 		# time.sleep(1)
 		except:
-			print "led_random failure"
+			print("led_random failure")
 
 
 def lcd_rgb(text):
@@ -413,7 +413,7 @@ def sound(spk):
 	#	-k20:		Emphasis on Capital letters
 	cmd_beg=" espeak -ven+m7 -a 200 -s180 -k20 --stdout '"
 	cmd_end="' | aplay"
-	print cmd_beg+spk+cmd_end
+	print(cmd_beg+spk+cmd_end)
 	call ([cmd_beg+spk+cmd_end], shell=True)
 
 
@@ -437,7 +437,7 @@ def random_bar():
 			bar_level = 10
 		LEDBarGraph(bar_level)
 	except:
-		print "Random Bar Failure"
+		print("Random Bar Failure")
 
 def random_led():
 		try:
@@ -445,7 +445,7 @@ def random_led():
 			grovepi.digitalWrite(led2,random.randint(0,1))
 			grovepi.digitalWrite(led3,random.randint(0,1))
 		except:
-			print "LED Failure!"
+			print("LED Failure!")
 
 def candy_detection():
 	global candy_count
@@ -457,7 +457,7 @@ def candy_detection():
 			dist = grovepi.ultrasonicRead(ultrasonic_ranger)
 			random_bar()
 			led_random()
-		print("Distance Detected: " + str(dist))
+		print(("Distance Detected: " + str(dist)))
 		candy_count = candy_count + 1
 		thanks = "Thank you for the candy! " + "I now have " + str(candy_count) + " pieces of candy!"
 		lcd_rgb(str(thanks))
@@ -482,7 +482,7 @@ while True:
 		led_random()
 		candy_detection()
 	except:
-		print "Error."
+		print("Error.")
 		lcd_rgb_blue_blank()
 		random_bar()
 		random_led()

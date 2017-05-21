@@ -114,7 +114,7 @@ while True:
 
     # Check to see if the joystick has been pressed down. 
     click = 1 if x >= 1020 else 0
-    print(str(x) + ", " + str(y))
+    print((str(x) + ", " + str(y)))
     
     # Check to see if we've been put into flying mode.  If we have, we can teleport ourselves!
     if(flying):

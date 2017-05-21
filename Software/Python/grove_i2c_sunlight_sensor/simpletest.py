@@ -45,9 +45,9 @@ while True:
         IR = sensor.readIR()
         UV = sensor.readUV()
         uvIndex = UV / 100.0
-        print('Vis:             ' + str(vis))
-        print('IR:              ' + str(IR))
-        print('UV Index:        ' + str(uvIndex))
+        print(('Vis:             ' + str(vis)))
+        print(('IR:              ' + str(IR)))
+        print(('UV Index:        ' + str(uvIndex)))
         print('')
         time.sleep(1)
 

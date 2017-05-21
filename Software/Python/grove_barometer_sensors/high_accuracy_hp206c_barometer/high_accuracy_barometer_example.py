@@ -45,4 +45,4 @@ else:
 temp=h.ReadTemperature()
 pressure=h.ReadPressure()
 altitude=h.ReadAltitude()
-print("Temperature\t: %.2f C\nPressure\t: %.2f hPa\nAltitude\t: %.2f m" %(temp,pressure,altitude))
+print(("Temperature\t: %.2f C\nPressure\t: %.2f hPa\nAltitude\t: %.2f m" %(temp,pressure,altitude)))

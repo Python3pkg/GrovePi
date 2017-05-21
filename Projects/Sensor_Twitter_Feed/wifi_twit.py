@@ -88,6 +88,6 @@ while True:
     except KeyboardInterrupt:
         exit()
     except Exception as e:
-        print("Duplicate Tweet or Twitter Refusal: {}".format(e))
+        print(("Duplicate Tweet or Twitter Refusal: {}".format(e)))
 
     time.sleep(60)

@@ -112,7 +112,7 @@ def write_i2c_block(address, block):
 	try:
 		return bus.write_i2c_block_data(address, 1, block)
 	except IOError:
-		print "IOError"
+		print("IOError")
 		return -1
 
 
@@ -121,7 +121,7 @@ def read_i2c_byte(address):
 	try:
 		return bus.read_byte(address)
 	except IOError:
-		print "IOError"
+		print("IOError")
 		return -1
 
 
@@ -130,7 +130,7 @@ def read_i2c_block(address):
 	try:
 		return bus.read_i2c_block_data(address, 1)
 	except IOError:
-		print "IOError"
+		print("IOError")
 		return -1
 
 

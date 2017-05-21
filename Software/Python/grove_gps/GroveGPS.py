@@ -36,7 +36,7 @@ class GPS:
 			ind=GPS.inp.index('$GPGGA',5,len(GPS.inp))	#Sometimes multiple GPS data packets come into the stream. Take the data only after the last '$GPGGA' is seen
 			GPS.inp=GPS.inp[ind:]
 		except ValueError:
-			print ""
+			print("")
 		GPS.GGA=GPS.inp.split(",")	#Split the stream into individual parts
 		return [GPS.GGA]
  
@@ -50,7 +50,7 @@ class GPS:
 		fix=GPS.GGA[6]
 		sats=GPS.GGA[7]
 		alt=GPS.GGA[9]
-		return [time,fix,sats,alt,lat,lat_ns,long,long_ew]
+		return [time,fix,sats,alt,lat,lat_ns,int,long_ew]
  
 g=GPS()
 f=open("gps_data.csv",'w')	#Open file to log the data
@@ -59,16 +59,16 @@ ind=0
 while True:
 	try:
 		x=g.read()	#Read from GPS
-		[t,fix,sats,alt,lat,lat_ns,long,long_ew]=g.vals()	#Get the individial values
-		print "Time:",t,"Fix status:",fix,"Sats in view:",sats,"Altitude",alt,"Lat:",lat,lat_ns,"Long:",long,long_ew
-		s=str(t)+","+str(float(lat)/100)+","+str(float(long)/100)+"\n"	
+		[t,fix,sats,alt,lat,lat_ns,int,long_ew]=g.vals()	#Get the individial values
+		print("Time:",t,"Fix status:",fix,"Sats in view:",sats,"Altitude",alt,"Lat:",lat,lat_ns,"Long:",int,long_ew)
+		s=str(t)+","+str(float(lat)/100)+","+str(float(int)/100)+"\n"	
 		f.write(s)	#Save to file
 		time.sleep(2)
 	except IndexError:
-		print "Unable to read"
+		print("Unable to read")
 	except KeyboardInterrupt:
 		f.close()
-		print "Exiting"
+		print("Exiting")
 		sys.exit(0)
 	except:
-		print "Raw String appears to be empty."
+		print("Raw String appears to be empty.")

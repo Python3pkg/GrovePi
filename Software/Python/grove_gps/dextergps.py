@@ -66,11 +66,11 @@ class GROVEGPS():
 		valid = False
 		for i in range(50):
 			time.sleep(0.5)
-			print i
+			print(i)
 			self.raw_line = self.ser.readline().strip()
 			if self.raw_line[:6] == "GPZDA":  # found date line!
-				print 
-				print self.raw_line
+				print() 
+				print(self.raw_line)
 			
 
 	def read(self):
@@ -159,4 +159,4 @@ if __name__ =="__main__":
 		time.sleep(1)
 		in_data = gps.read()
 		if in_data != []:
-			print in_data
+			print(in_data)

@@ -207,7 +207,7 @@ class lsm303d:
 		
 		pitch = math.asin(-accelValue[X])
 		
-		print(accelValue[Y],pitch,math.cos(pitch),accelValue[Y]/math.cos(pitch),math.asin(accelValue[Y]/math.cos(pitch)))
+		print((accelValue[Y],pitch,math.cos(pitch),accelValue[Y]/math.cos(pitch),math.asin(accelValue[Y]/math.cos(pitch))))
 		roll = math.asin(accelValue[Y]/math.cos(pitch))
 
 		xh = magValue[X] * math.cos(pitch) + magValue[Z] * math.sin(pitch)
@@ -223,12 +223,12 @@ class lsm303d:
 if __name__ == "__main__":		
 	acc_mag=lsm303d()
 	while True:
-		print(acc_mag.getRealAccel())
+		print((acc_mag.getRealAccel()))
 		
 		while True:
 			if acc_mag.isMagReady():
 				break
-		print(acc_mag.getHeading())
+		print((acc_mag.getHeading()))
 		
 		# Do not use, math error
 		# print acc_mag.getTiltHeading()

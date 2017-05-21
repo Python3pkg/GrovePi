@@ -74,7 +74,7 @@ def sleeptime():
     # print now, start_sleeptime, "(", now-start_sleeptime,")", go_to_sleep_time, "(",go_to_sleep_time-now,")"
     if now >= go_to_sleep_time:
         print("Sleep time!!!")
-        print("Will wake up in ", hours_of_sleep, " hours") 
+        print(("Will wake up in ", hours_of_sleep, " hours")) 
         grovepi.digitalWrite(relay,0)
         lights_on = False
         for i in range(60):
@@ -132,7 +132,7 @@ while True:
             # turn lights off
             if lights_on == True:
                 lights_on = False
-                print("turning lights off", light_sensor_value)
+                print(("turning lights off", light_sensor_value))
                 grovepi.digitalWrite(relay,0)
         
 
